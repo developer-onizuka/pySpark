@@ -37,7 +37,10 @@ sorteddf.show()
 ```
 ```
 from pyspark.context import SparkContext
+from pyspark.sql.session import SparkSession
 from pyspark.sql.types import *
+sc = SparkContext.getOrCreate()
+spark = SparkSession(sc)
 
 df = spark.read.option('header','false') \
                .option('delimiter',',') \
