@@ -117,3 +117,17 @@ newdf.show()
 |     Israel|    1|
 +-----------+-----+
 ```
+```
+df.createOrReplaceTempView("tempview")
+result=spark.sql("SELECT name, count(name) from tempview Group By name")
+result.show()
+```
+```
++------+-----------+
+|  name|count(name)|
++------+-----------+
+|Orange|          3|
+|Banana|          3|
+| Apple|          2|
++------+-----------+
+```
