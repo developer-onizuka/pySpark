@@ -101,8 +101,6 @@ id,name,price,country
 8,Banana,12.99,Philippines
 ```
 ```
-from pyspark.sql.functions import desc
-
 newdf=df.groupby(df['country']) \
       .count().sort(desc("count"))
 
