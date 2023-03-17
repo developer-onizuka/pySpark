@@ -35,3 +35,23 @@ sorteddf.show()
 |  1| Apple|10.99|
 +---+------+-----+
 ```
+```
+from pyspark.context import SparkContext
+from pyspark.sql.types import *
+sc = SparkContext.getOrCreate()
+spark = SparkSession(sc)
+
+df = spark.read.option('header','false') \
+               .option('delimiter',',') \
+               .csv('fruits.txt')
+df.show()
+```
+```
++---+--------+-----+
+|_c0|     _c1|  _c2|
++---+--------+-----+
+|  1| 'Apple'|10.99|
+|  2|'Orange'|11.99|
+|  3|'Banana'|12.99|
++---+--------+-----+
+```
