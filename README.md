@@ -44,7 +44,7 @@ spark = SparkSession(sc)
 
 df = spark.read.option('header','false') \
                .option('delimiter',',') \
-               .csv('fruits.txt')
+               .csv('fruits.csv')
 df.show()
 ```
 ```
@@ -56,7 +56,7 @@ df.show()
 |  3|Banana|12.99|
 +---+------+-----+
 ```
-- fruits.txt
+- fruits.csv
 ```
 1,Apple,10.99
 2,Orange,11.99
@@ -88,7 +88,7 @@ df.show()
 |  8|Banana|12.99|Philippines|
 +---+------+-----+-----------+
 ```
-- fruits.txt
+- fruits.csv
 ```
 id,name,price,country
 1,Apple,10.99,Japan
