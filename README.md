@@ -118,7 +118,7 @@ newdf.show()
 +-----------+-----+
 ```
 ```
-df.createOrReplaceTempView("tempview")
+df.write.mode("overwrite").saveAsTable("tempview")
 result=spark.sql("SELECT name, count(name) from tempview Group By name")
 result.show()
 ```
