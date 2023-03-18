@@ -71,7 +71,7 @@ spark = SparkSession(sc)
 
 df = spark.read.option('header','true') \
                .option('delimiter',',') \
-               .csv('fruits.txt')
+               .csv('fruits.csv')
 df.show()
 ```
 ```
